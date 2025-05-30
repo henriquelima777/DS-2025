@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Rivals</title>
+    <link rel="stylesheet" href="/static/styles/escolher-carta.css">
+    <link rel="shortcut icon" href="/static/assets/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="linha-marvel"><img src="/static/assets/linha-marvel.png" alt=""></div>
+    
+    <button class="botao-herois" onclick="escolherDeck('herois')">HERÓIS</button>
+
+    <button class="botao-viloes" onclick="escolherDeck('viloes')">VILÕES</button>
+    
+    <div class="cards-esquerda"><img src="/static/assets/cards-esquerda.png" alt=""></div>
+
+    <div class="cards-direita"><img src="/static/assets/cards-direita.png" alt=""></div>
+
+    <script>
+        function escolherDeck(deckType) {
+            // Armazena a escolha do deck no localStorage
+            localStorage.setItem('deckEscolhido', deckType);
+            
+            // Redireciona para a página de batalha
+            window.location.href = '/jogar';
+        }
+
+        
+    </script>
+    
+</body>
+</html>

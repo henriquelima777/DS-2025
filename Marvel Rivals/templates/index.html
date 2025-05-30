@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Rivals</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+    <link rel="shortcut icon" href="/static/assets/favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body>
+    <button class="botao-jogar" onclick="irParaEscolherCarta()">JOGAR</button>
+    <button class="botao-tutorial" onclick="irParaTutorial()">?</button>
+
+    <script>
+        function irParaEscolherCarta() {
+            window.location.href = "/escolher-carta";
+        }
+                function irParaTutorial() {
+            window.location.href = "/tutorial";
+        }
+    </script>
+</body>
+
+</html>

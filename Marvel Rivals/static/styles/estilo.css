@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/static/assets/background-pagina-inicio.png') no-repeat center center/cover;
+    height: 110vh;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: flex-end; /* Alinha os elementos à direita */
+    align-items: center;
+    padding-right: 120px; /* Ajusta o botão para a direita */
+}
+
+.botao-jogar {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    bottom: 35%;
+    right: 17%;
+}
+
+.botao-jogar:hover {
+    background-color: darkred;
+}
+
+.botao-tutorial {
+    background-color: #731210;
+    color: white;
+    font-size: 20px;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 40%;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    bottom: 92%;
+    right: 2%;
+}
+
+.botao-tutorial:hover {
+    background-color: darkred;
+}

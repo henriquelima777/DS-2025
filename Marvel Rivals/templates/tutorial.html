@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial - Marvel Rivals</title>
+  <link rel="stylesheet" href="/static/styles/tutorial.css">
+  <link rel="shortcut icon" href="/static/assets/favicon-32x32.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="tutorial-container">
+    <h1 class="titulo">Como Jogar</h1>
+    <p class="descricao">
+      Prepare-se para batalhas épicas! Aprenda aqui tudo o que precisa para dominar o Marvel Rivals.
+    </p>
+
+    <!-- Seções Explicativas -->
+    <section class="secao">
+      <h2>🎯 Objetivo do Jogo</h2>
+      <p>Escolha um time de heróis ou vilões, jogue suas cartas no campo e derrote o adversário usando seus ataques estratégicos.</p>
+    </section>
+
+    <section class="secao">
+      <h2>⚔️ Como Atacar</h2>
+      <p>Após colocar sua carta no campo, use os botões de ataque para causar dano ao inimigo. Cada carta tem dois ataques alternáveis!</p>
+    </section>
+
+    <section class="secao">
+      <h2>🏁 Fim de Jogo</h2>
+      <p>O jogo termina quando todas as cartas de um dos jogadores forem eliminadas. Que vença o melhor estrategista!</p>
+    </section>
+
+    <!-- Carrossel de Cartas -->
+<div class="carrosseis-duplos">
+
+  <!-- Heróis -->
+  <div class="carrossel">
+    <h2 class="titulo-carrossel">Heróis</h2>
+    <button class="btn-anterior" onclick="trocarCarta('heroi', -1)">&#8592;</button>
+    <div class="carta-container">
+      <img id="carta-heroi" src="/static/assets/homemdeferro.png" alt="Carta Herói">
+      <p id="nome-heroi">Homem de Ferro</p>
+    </div>
+    <button class="btn-proximo" onclick="trocarCarta('heroi', 1)">&#8594;</button>
+  </div>
+
+  <!-- Vilões -->
+  <div class="carrossel">
+    <h2 class="titulo-carrossel">Vilões</h2>
+    <button class="btn-anterior" onclick="trocarCarta('vilao', -1)">&#8592;</button>
+    <div class="carta-container">
+      <img id="carta-vilao" src="/static/assets/loki.png" alt="Carta Vilão">
+      <p id="nome-vilao">Loki</p>
+    </div>
+    <button class="btn-proximo" onclick="trocarCarta('vilao', 1)">&#8594;</button>
+  </div>
+
+</div>
+
+    <!-- Vídeo Tutorial (opcional) -->
+    <section class="video-tutorial">
+      <h2>Veja o Tutorial em Vídeo</h2>
+      <video controls width="500">
+        <source src="/static/assets/tutorial-jogada.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </section>
+
+    <!-- Botão Voltar -->
+    <button class="btn-voltar" onclick="window.location.href='/'">Voltar ao Menu</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+  // Heróis
+  const imagensHerois = [
+    "/static/assets/homemdeferro.png",
+    "/static/assets/capitaoamerica.png",
+    "/static/assets/panteranegra.png",
+    "/static/assets/feiticeiraescarlate.png"
+  ];
+
+  const nomesHerois = [
+    "Homem de Ferro",
+    "Capitão América",
+    "Pantera Negra",
+    "Feiticeira Escarlate"
+  ];
+
+  // Vilões
+  const imagensViloes = [
+    "/static/assets/loki.png",
+    "/static/assets/caveiravermelha.png",
+    "/static/assets/ultron.png",
+    "/static/assets/thanos.png"
+  ];
+
+  const nomesViloes = [
+    "Loki",
+    "Caveira Vermelha",
+    "Ultron",
+    "Thanos"
+  ];
+
+  let indiceHeroi = 0;
+  let indiceVilao = 0;
+
+  function trocarCarta(tipo, direcao) {
+    if (tipo === 'heroi') {
+      indiceHeroi += direcao;
+      if (indiceHeroi < 0) indiceHeroi = imagensHerois.length - 1;
+      if (indiceHeroi >= imagensHerois.length) indiceHeroi = 0;
+      document.getElementById('carta-heroi').src = imagensHerois[indiceHeroi];
+      document.getElementById('nome-heroi').innerText = nomesHerois[indiceHeroi];
+    } else if (tipo === 'vilao') {
+      indiceVilao += direcao;
+      if (indiceVilao < 0) indiceVilao = imagensViloes.length - 1;
+      if (indiceVilao >= imagensViloes.length) indiceVilao = 0;
+      document.getElementById('carta-vilao').src = imagensViloes[indiceVilao];
+      document.getElementById('nome-vilao').innerText = nomesViloes[indiceVilao];
+    }
+  }
+</script>
+
+
+</body>
+</html>
+
